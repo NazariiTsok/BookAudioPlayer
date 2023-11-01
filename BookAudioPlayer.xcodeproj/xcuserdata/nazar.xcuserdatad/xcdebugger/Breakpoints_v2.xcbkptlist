@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4EAA8D84-E77A-477D-9B92-D274D138C6D2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "249A7416-E970-4C9D-BA16-2AF38BDDE3A6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Sources/PlayerFeature/VIews/PlayerPlaybackPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50611BAE-AF5E-447B-8B84-0FF670B2A505"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Sources/PlayerFeature/View.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "init(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "50611BAE-AF5E-447B-8B84-0FF670B2A505 - e99f6273ff3deb4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlayerFeature.PlayerFeatureView.ViewState.init(PlayerFeature.PlayerFeature.State) -&gt; PlayerFeature.PlayerFeatureView.ViewState"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/View.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "5726">
+               </Location>
+               <Location
+                  uuid = "50611BAE-AF5E-447B-8B84-0FF670B2A505 - e99f6273ff3def4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlayerFeature.PlayerFeatureView.ViewState.init(PlayerFeature.PlayerFeature.State) -&gt; PlayerFeature.PlayerFeatureView.ViewState"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/View.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "102A4A04-CFF4-4B45-8AF8-1826D28F5F37"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Sources/PlayerFeature/Feature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "102A4A04-CFF4-4B45-8AF8-1826D28F5F37 - ee7c080914703dad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout PlayerFeature.PlayerFeature.State, PlayerFeature.PlayerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;PlayerFeature.PlayerFeature.Action&gt; in PlayerFeature.PlayerFeature.body.getter : some"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/Feature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "423"
+                  endingLineNumber = "423"
+                  offsetFromSymbolStart = "11506">
+               </Location>
+               <Location
+                  uuid = "102A4A04-CFF4-4B45-8AF8-1826D28F5F37 - ee7c080914703dad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout PlayerFeature.PlayerFeature.State, PlayerFeature.PlayerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;PlayerFeature.PlayerFeature.Action&gt; in PlayerFeature.PlayerFeature.body.getter : some"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/Feature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "423"
+                  endingLineNumber = "423"
+                  offsetFromSymbolStart = "8839">
+               </Location>
+               <Location
+                  uuid = "102A4A04-CFF4-4B45-8AF8-1826D28F5F37 - ee7c080914703dad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout PlayerFeature.PlayerFeature.State, PlayerFeature.PlayerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;PlayerFeature.PlayerFeature.Action&gt; in PlayerFeature.PlayerFeature.body.getter : some"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/Feature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "423"
+                  endingLineNumber = "423"
+                  offsetFromSymbolStart = "8820">
+               </Location>
+               <Location
+                  uuid = "102A4A04-CFF4-4B45-8AF8-1826D28F5F37 - ee7c080914703dad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout PlayerFeature.PlayerFeature.State, PlayerFeature.PlayerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;PlayerFeature.PlayerFeature.Action&gt; in PlayerFeature.PlayerFeature.body.getter : some"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/Feature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "423"
+                  endingLineNumber = "423"
+                  offsetFromSymbolStart = "10797">
+               </Location>
+               <Location
+                  uuid = "102A4A04-CFF4-4B45-8AF8-1826D28F5F37 - ee7c080914703dad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout PlayerFeature.PlayerFeature.State, PlayerFeature.PlayerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;PlayerFeature.PlayerFeature.Action&gt; in PlayerFeature.PlayerFeature.body.getter : some"
+                  moduleName = "BookAudioPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/BookAudioPlayer/Modules/Sources/PlayerFeature/Feature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "423"
+                  endingLineNumber = "423"
+                  offsetFromSymbolStart = "11954">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
