@@ -1,0 +1,76 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+    load_asc_api_token
+  end
+
+  desc "Load the App Store Connect API token"
+  lane :load_asc_api_token do
+    app_store_connect_api_key(
+      key_id: ENV["ASC_KEY_ID"],
+      issuer_id: ENV["ASC_ISSUER_ID"],
+      key_content: ENV["ASC_KEY_P8"],
+      is_key_content_base64: true,
+      in_house: false
+    )
+  end
+
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+  desc "Code Sign and Provising Profiles Sync"
+  lane :match_certificates do
+    match(type: "appstore")
+
+    # match(type: "development")
+  end
+
+  desc "Run all the tests"
+  lane :run_unit_tests do
+    scan(
+      scheme: "BookAudioPlayer",
+      clean: true,
+      devices: ["iPhone 6s", "iPad Air"]
+      )
+    end
+
+  desc "Build the app"
+  lane :build do |options|
+    match_certificates
+
+    version = options[:project_version]
+
+    increment_version_number(
+      version_number: version,
+      xcodeproj: "BookAudioPlayer.xcodeproj"
+    )
+
+    gym
+
+    # increment_build_number(
+    #   build_number: "#{latest_testflight_build_number + 1}",
+    #   skip_info_plist:  true,
+    #   xcodeproj: "BookAudioPlayer.xcodeproj"
+    # )
+  end
+
+end

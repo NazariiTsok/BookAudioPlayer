@@ -1,5 +1,60 @@
 import SwiftUI
 
+
+import SwiftUI
+
+struct CustomLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment : .lastTextBaseline) {
+            configuration.icon
+                .frame(width: 10, height: 12)
+//                .foregroundColor(.blue)
+                .font(.headline)
+
+
+            configuration.title
+                .font(.headline)
+//                .foregroundColor(.green)
+        }
+        .padding(10)
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
+        .frame(alignment: .bottom)
+    }
+}
+
+
+struct CentreAlignedLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Label {
+            configuration.title
+                .alignmentGuide(.lastTextBaseline) {
+                    $0[VerticalAlignment.bottom]
+                }
+        } icon: {
+            configuration.icon
+                .alignmentGuide(.lastTextBaseline) {
+                    $0[VerticalAlignment.bottom]
+                }
+        }
+        .padding(.all)
+        .background(Color.red)
+    }
+}
+
+struct SwiftUIView: View {
+    var body: some View {
+        Label("Custom Label", systemImage: "lock.fill")
+                    .labelStyle(CentreAlignedLabelStyle())
+    }
+}
+
+#Preview {
+    SwiftUIView()
+}
+
+
+
+
 public struct AsyncButton<Label: View>: View {
     var action: () async -> Void
     var label: Label

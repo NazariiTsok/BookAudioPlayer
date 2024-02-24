@@ -18,8 +18,8 @@ public final class StoreKitClientLive {
     private var updatesTask: Task<Void, Never>?
     
     public init(premiumService: PremiumClient,
-          purchasedProductIds: Set<String> = [],
-          availableSubscriptions: [Product] = []
+                purchasedProductIds: Set<String> = [],
+                availableSubscriptions: [Product] = []
     ) {
         self.premiumService = premiumService
         self.purchasedProductIds = purchasedProductIds
@@ -51,10 +51,10 @@ public final class StoreKitClientLive {
         guard availableSubscriptions.isEmpty else { return  }
         
         let subscriptionIds = SubscriptionID.allCases.map(\.rawValue)
-
+        
         do {
             let products = try await Product.products(for: subscriptionIds)
-                        
+            
             availableSubscriptions = subscriptionIds.compactMap { id in
                 products.first(where: { $0.id == id })
             }
@@ -89,11 +89,11 @@ public final class StoreKitClientLive {
     }
     
     private func updatePremiumStateIfNeeded() {
-            let isCurrentlyPremium = purchasedProductIds.contains(SubscriptionID.yearly.rawValue)
-            if isCurrentlyPremium != premiumService.isCurrentlyPremium {
-                premiumService.isCurrentlyPremium = isCurrentlyPremium
-            }
+        let isCurrentlyPremium = purchasedProductIds.contains(SubscriptionID.yearly.rawValue)
+        if isCurrentlyPremium != premiumService.isCurrentlyPremium {
+            premiumService.isCurrentlyPremium = isCurrentlyPremium
         }
+    }
 }
 
 extension StoreKitClientLive: StoreKitClient {

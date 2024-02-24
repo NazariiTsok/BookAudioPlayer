@@ -15,6 +15,8 @@ public final class LivePremiumClient: PremiumClient {
     public init(
         storage: UserDefaults = .sharedSchema
     ) {
-        (_isCurrentlyPremium, isPremium) = storage.persistedBool(forKey: "is-premium-service-active").withPublisher()
+        (_isCurrentlyPremium, self.isPremium) = storage.persistedBool(forKey: "is-premium-service-active").withPublisher()
+        
+        print("_isCurrentlyPremium : \(_isCurrentlyPremium.value)")
     }
 }

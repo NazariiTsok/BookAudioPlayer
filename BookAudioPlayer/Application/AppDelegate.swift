@@ -17,6 +17,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     lazy var viewStore = ViewStore(store, observe: { $0 })
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
         self.viewStore.send(.appDelegate(.didFinishLaunching))
         return true
     }
