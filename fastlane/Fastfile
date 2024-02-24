@@ -13,6 +13,8 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+bundle exec fastlane deplay 
+
 default_platform(:ios)
 
 platform :ios do
@@ -33,8 +35,14 @@ platform :ios do
   end
 
   desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :release_beta do
+    load_asc_api_token
+    match_certificates
+
+    env_var = ENV['ENVIRONMENT']
+  
+    # Prints the value of the environment variable to the console
+    puts "The value of YOUR_ENV_VARIABLE is: #{env_var}"
   end
 
   desc "Code Sign and Provising Profiles Sync"
