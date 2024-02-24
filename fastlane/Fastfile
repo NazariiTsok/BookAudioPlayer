@@ -13,13 +13,54 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+keychain_name = "temporary_keychain"
+keychain_password = SecureRandom.base64
+
 default_platform(:ios)
 
 platform :ios do
 
   before_all do
-    load_asc_api_token
+    setup_ci
+    # load_asc_api_token
   end
+
+
+  desc "Synchronize certificates"
+  lane :certificates do
+    cleanup_keychain
+    create_keychain(
+      name: keychain_name,
+      password: keychain_password,
+      default_keychain: true,
+      lock_when_sleeps: true,
+      timeout: 3600,
+      unlock: true
+    )
+    match(
+      type: "development",
+      readonly: true,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password
+    )
+  end
+
+  lane :cleanup_keychain do
+    if File.exist?(File.expand_path("~/Library/Keychains/#{keychain_name}-db"))
+      delete_keychain(name: keychain_name)
+    end
+  end
+
+  after_all do
+    if File.exist?(File.expand_path("~/Library/Keychains/#{keychain_name}-db"))
+      delete_keychain(name: keychain_name)
+    end
+  end
+
+
+
+
+
 
   desc "Load the App Store Connect API token"
   lane :load_asc_api_token do
