@@ -13,13 +13,54 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+keychain_name = "temporary_keychain"
+keychain_password = SecureRandom.base64
+
 default_platform(:ios)
 
 platform :ios do
 
   before_all do
-    load_asc_api_token
+    setup_ci
+    # load_asc_api_token
   end
+
+
+  desc "Synchronize certificates"
+  lane :certificates do
+    cleanup_keychain
+    create_keychain(
+      name: keychain_name,
+      password: keychain_password,
+      default_keychain: true,
+      lock_when_sleeps: true,
+      timeout: 3600,
+      unlock: true
+    )
+    match(
+      type: "development",
+      readonly: true,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password
+    )
+  end
+
+  lane :cleanup_keychain do
+    if File.exist?(File.expand_path("~/Library/Keychains/#{keychain_name}-db"))
+      delete_keychain(name: keychain_name)
+    end
+  end
+
+  after_all do
+    if File.exist?(File.expand_path("~/Library/Keychains/#{keychain_name}-db"))
+      delete_keychain(name: keychain_name)
+    end
+  end
+
+
+
+
+
 
   desc "Load the App Store Connect API token"
   lane :load_asc_api_token do
@@ -33,8 +74,14 @@ platform :ios do
   end
 
   desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :release_beta do
+    load_asc_api_token
+    match_certificates
+
+    env_var = ENV['ENVIRONMENT']
+  
+    # Prints the value of the environment variable to the console
+    puts "The value of YOUR_ENV_VARIABLE is: #{env_var}"
   end
 
   desc "Code Sign and Provising Profiles Sync"

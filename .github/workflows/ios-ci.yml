@@ -1,0 +1,33 @@
+name: Apple Develop Build
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-and-deploy-ios:
+    runs-on: macos-latest
+    environment: Develop
+    steps:
+      - name: Set up git and fetch all history for all branches and tags
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.7"
+      - name: Bundle install for iOS Gemfile
+        run: |
+          bundle config set path 'vendor/bundle' 
+          bundle install
+      - name: Build and Deploy to TestFlight
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: 
+          bundle exec fastlane release_beta
