@@ -1,4 +1,4 @@
-name: Apple Develop Build
+name: ios-deployment
 
 on:
   push:
@@ -17,12 +17,12 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "2.7"
-      - name: Bundle install for iOS Gemfile
+          ruby-version: "3.2.1"
+      - name: Install Dependencies
         run: |
           bundle config set path 'vendor/bundle' 
           bundle install
-      - name: Build and Deploy to TestFlight
+      - name: Build and Deploy App
         env:
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}

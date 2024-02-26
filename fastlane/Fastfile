@@ -73,7 +73,6 @@ end
           # use only provisioning profiles from match
           provisioningProfiles: lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING],
         },
-        suppress_xcode_output: false,
       )
     ensure
       set_auto_code_signing(
@@ -86,7 +85,7 @@ end
       version_number: get_version_number(target: target),
       build_number: get_build_number,
     )
-    UI.success "Successfully released Hyperskill iOS RELEASE #{scheme} #{vs}"
+    UI.success "Successfully released BookAudioPlayer iOS RELEASE #{scheme} #{vs}"
 
   end
 
