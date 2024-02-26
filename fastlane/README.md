@@ -15,10 +15,48 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios custom_lane
+### ios release
 
 ```sh
-[bundle exec] fastlane ios custom_lane
+[bundle exec] fastlane ios release
+```
+
+Deploy a new version to the App Store
+
+Options: scheme, target, install_pods
+
+### ios dev
+
+```sh
+[bundle exec] fastlane ios dev
+```
+
+Builds and uploads the app using the dev environment.
+
+Available options: skip_build_upload
+
+### ios staging
+
+```sh
+[bundle exec] fastlane ios staging
+```
+
+Builds and uploads the app using the staging environment.
+
+Available options: skip_build_upload
+
+### ios code_signing
+
+```sh
+[bundle exec] fastlane ios code_signing
+```
+
+Updates code signing on the current machine
+
+### ios release_beta
+
+```sh
+[bundle exec] fastlane ios release_beta
 ```
 
 Description of what the lane does

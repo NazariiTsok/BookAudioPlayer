@@ -1,4 +1,4 @@
-name: ios-deployment
+name: Apple Develop Build
 
 on:
   push:
@@ -14,16 +14,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.171.0
-        with:
-          ruby-version: '3.3.0'
-          bundler-cache: true
       - name: Install Dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.4
+      - name: Setup dependencies
         run: |
           bundle config set path 'vendor/bundle' 
           bundle install
-      - name: Build and Deploy App
+      - name: Build and Deploy to TestFlight
         env:
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
