@@ -5,12 +5,67 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00035">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000352">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: scan" time="250.092572">
+      <testcase classname="fastlane.lanes" name="01: setup_ci" time="0.000284">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: clear_derived_data" time="0.001445">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: is_ci" time="0.000164">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: Switch to ios update_code_signing lane" time="0.000149">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: is_ci" time="0.000169">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: match" time="29.211289">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: Switch to ios set_manual_code_signing lane" time="0.000225">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: update_code_signing_settings" time="0.020222">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: gym" time="143.062589">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: get_version_number" time="0.008049">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: get_build_number" time="0.131926">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: clean_build_artifacts" time="0.001108">
         
       </testcase>
     
