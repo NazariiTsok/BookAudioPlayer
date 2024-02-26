@@ -53,6 +53,7 @@ end
       load_app_store_connect_api_token
     end
 
+    
     update_code_signing
 
     # Disable automatic code signing -> build -> enable again
@@ -64,8 +65,8 @@ end
     gym(
         scheme: "#{scheme}",
         clean: true,
-        archive_path "output/#{scheme}.xcarchive"
-        output_directory: "artifacts",
+        output_directory: "output",
+        archive_path "output/#{scheme}.xcarchive",
         output_name: "#{scheme}.ipa",
         include_bitcode: false,
         skip_profile_detection: true,
@@ -250,7 +251,8 @@ end
       clean: true,
       devices: ["iPhone 6s", "iPad Air"]
       )
-    end
+  end
+  
 
     # increment_build_number(
     #   build_number: "#{latest_testflight_build_number + 1}",
