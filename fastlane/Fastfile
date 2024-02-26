@@ -10,7 +10,9 @@ app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifi
  # Constants
 
  schemes = {
-  "BookAudioPlayer" => "BookAudioPlayer"
+  "BookAudioPlayer" => [
+    "BookAudioPlayer",
+  ],
 }  
 
 configurations = {
