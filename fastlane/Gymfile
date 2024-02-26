@@ -6,7 +6,30 @@
 
 # Remove the # in front of the line to enable the option
 
-scheme("BookAudioPlayer")
-clean(true)
 
-output_directory("./build")
+scheme("BookAudioPlayer")
+
+archive_path "output/BookAudioPlayer.xcarchive"
+clean true
+export_method "ad-hoc"
+include_bitcode false
+include_symbols true
+output_directory("output")
+scheme "BookAudioPlayer"
+skip_profile_detection true
+project "BookAudioPlayer.xcodeproj"
+
+
+for_lane :dev do
+    scheme "Blockchain (Dev)"
+end
+
+for_lane :staging do
+    scheme "Blockchain"
+    export_method "app-store"
+end
+
+for_lane :release do
+    export_method "app-store"
+end
+
