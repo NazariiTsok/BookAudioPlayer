@@ -1,4 +1,8 @@
 app_identifier("tryon.technology.BookAudioPlayer") # The bundle identifier of your app
 # apple_id("[[APPLE_ID]]") # Your Apple email address
 
+git_url(ENV["MATCH_URL"]) # Fastlane Cert and Provision Profiles repo
 
+ 
+team_id(ENV["APPSTORE_TEAM_ID"]) # App Store Connect Team ID
+team_name(ENV["APPLE_TEAM_NAME"]) # App Store Connect Team Name
