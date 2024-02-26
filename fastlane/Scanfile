@@ -1,0 +1,16 @@
+
+
+# open_report(true)
+
+# clean(true)
+
+# Enable skip_build to skip debug builds for faster test performance
+clean(false)
+skip_build(true)
+project "BookAudioPlayer.xcodeproj"
+# configuration("Debug Staging")
+scheme("BookAudioPlayer")
+# slack_channel("#ios-ci")
+# slack_url(ENV["SLACK_WEBHOOK_URL"])
+skip_slack(true)
+device("iPhone 14 (16.4)")
