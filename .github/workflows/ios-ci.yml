@@ -24,10 +24,13 @@ jobs:
           bundle install
       - name: Build and Deploy to TestFlight
         env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_TEAM_NAME: ${{ secrets.APPLE_TEAM_NAME }}
+          MATCH_URL: ${{ secrets.MATCH_URL }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         run: 
           bundle exec fastlane release
