@@ -63,19 +63,19 @@ end
     )
    
     gym(
-        scheme: "#{scheme}",
-        clean: true,
-        output_directory: "output",
-        archive_path "output/#{scheme}.xcarchive",
-        output_name: "#{scheme}.ipa",
-        include_bitcode: false,
-        skip_profile_detection: true,
-        export_method: "app-store",
-        export_options: {
-          # use only provisioning profiles from match
-          provisioningProfiles: lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING],
-        },
-      )
+      scheme: "#{scheme}",
+      clean: true,
+      output_directory: "output",
+      archive_path: "output/#{scheme}.xcarchive", # Added missing colon here
+      output_name: "#{scheme}.ipa",
+      include_bitcode: false,
+      skip_profile_detection: true,
+      export_method: "app-store",
+      export_options: {
+        # use only provisioning profiles from match
+        provisioningProfiles: lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING],
+   },
+  )
 
     vs = make_version_string(
       version_number: get_version_number(target: target),
